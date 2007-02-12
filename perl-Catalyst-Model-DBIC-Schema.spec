@@ -8,7 +8,7 @@
 %define	pdir	Catalyst
 %define	pnam	Model-DBIC-Schema
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
-Summary(pl.UTF-8):   Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
+Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
 Version:	0.18
 Release:	1
