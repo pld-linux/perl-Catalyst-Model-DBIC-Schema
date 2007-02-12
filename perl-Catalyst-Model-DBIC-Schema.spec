@@ -8,7 +8,7 @@
 %define	pdir	Catalyst
 %define	pnam	Model-DBIC-Schema
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
-Summary(pl):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
+Summary(pl.UTF-8):   Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
 Version:	0.18
 Release:	1
@@ -37,12 +37,12 @@ on generating these Models via Helper scripts.  The latter of the two
 will also generated a DBIx::Class::Schema::Loader-based Schema class
 for you.
 
-%description -l pl
+%description -l pl.UTF-8
 To jest model Catalysta dla modeli opartych o DBIx::Class::Schema.
 Informacje na temat generowania tych modeli poprzez skrypty pomocnicze
-mo¿na znale¼æ w dokumentacji dla Catalyst::Helper::Model::DBIC::Schema
-i Catalyst::Helper::Model::DBIC::SchemaLoader. Ten drugi modu³
-wygeneruje tak¿e klasê schematu opart± o DBIx::Class::Schema::Loader.
+moÅ¼na znaleÅºÄ‡ w dokumentacji dla Catalyst::Helper::Model::DBIC::Schema
+i Catalyst::Helper::Model::DBIC::SchemaLoader. Ten drugi moduÅ‚
+wygeneruje takÅ¼e klasÄ™ schematu opartÄ… o DBIx::Class::Schema::Loader.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
