@@ -11,7 +11,7 @@ Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
 Version:	0.18
-Release:	2
+Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -67,6 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/Catalyst/Model/DBIC/*.pm
+%{perl_vendorlib}/Catalyst/Model/DBIC
 %{perl_vendorlib}/Catalyst/Helper/Model/*
 %{_mandir}/man3/*
