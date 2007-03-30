@@ -11,7 +11,7 @@ Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
 Version:	0.18
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -26,6 +26,7 @@ BuildRequires:	perl-Class-Data-Accessor >= 0.02
 BuildRequires:	perl-DBIx-Class >= 0.07
 BuildRequires:	perl-UNIVERSAL-require >= 0.1
 %endif
+Requires:	perl-Catalyst >= 5.64
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
