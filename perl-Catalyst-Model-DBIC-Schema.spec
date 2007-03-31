@@ -15,8 +15,10 @@ Release:	3
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/B/BL/BLBLACK/Catalyst-Model-DBIC-Schema-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/B/BL/BLBLACK/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	13d76a2e833af762d4858cfc0c2565c5
+URL:		http://search.cpan.org/Catalyst-Model-DBIC-Schema/
+BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -31,10 +33,10 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is a Catalyst Model for DBIx::Class::Schema-based Models.  See
+This is a Catalyst Model for DBIx::Class::Schema-based Models. See
 the documentation for Catalyst::Helper::Model::DBIC::Schema and
 Catalyst::Helper::Model::DBIC::SchemaLoader for information
-on generating these Models via Helper scripts.  The latter of the two
+on generating these Models via Helper scripts. The latter of the two
 will also generated a DBIx::Class::Schema::Loader-based Schema class
 for you.
 
