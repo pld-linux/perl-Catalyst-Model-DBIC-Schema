@@ -10,23 +10,22 @@
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
-Version:	0.18
-Release:	3
+Version:	0.20
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/B/BL/BLBLACK/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	13d76a2e833af762d4858cfc0c2565c5
+# Source0-md5:	0a95e2571f293129e28d500ec65cffea
 URL:		http://search.cpan.org/Catalyst-Model-DBIC-Schema/
-BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl-Catalyst >= 5.64
+BuildRequires:	perl-Catalyst >= 5.70
 BuildRequires:	perl-Class-Accessor >= 0.22
 BuildRequires:	perl-Class-Data-Accessor >= 0.02
-BuildRequires:	perl-DBIx-Class >= 0.07
-BuildRequires:	perl-UNIVERSAL-require >= 0.1
+BuildRequires:	perl-DBIx-Class >= 0.07006
+BuildRequires:	perl-UNIVERSAL-require >= 0.10
 %endif
 Requires:	perl-Catalyst >= 5.64
 BuildArch:	noarch
@@ -51,24 +50,24 @@ wygeneruje także klasę schematu opartą o DBIx::Class::Schema::Loader.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Build.PL \
-	destdir=$RPM_BUILD_ROOT \
-	installdirs=vendor
-./Build
+%{__perl} -MExtUtils::MakeMaker -we 'WriteMakefile(NAME=>"Catalyst::Model::DBIC::Schema")' \
+	INSTALLDIRS=vendor
+%{__make}
 
-%{?with_tests:./Build test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-./Build install
+%{__make} pure_install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
+%doc Changes
 %{perl_vendorlib}/Catalyst/Model/DBIC
 %{perl_vendorlib}/Catalyst/Helper/Model/*
 %{_mandir}/man3/*
