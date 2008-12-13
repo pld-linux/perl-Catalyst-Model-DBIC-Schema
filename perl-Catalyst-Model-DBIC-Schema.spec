@@ -10,13 +10,13 @@
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
-Version:	0.20
+Version:	0.21
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/B/BL/BLBLACK/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	0a95e2571f293129e28d500ec65cffea
+Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{pdir}-%{pnam}-%{version}.tar.gz
+# Source0-md5:	1616235f66aed96e3aa8befc6c8d3b0f
 URL:		http://search.cpan.org/Catalyst-Model-DBIC-Schema/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
