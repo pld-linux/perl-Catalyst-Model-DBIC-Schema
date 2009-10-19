@@ -10,21 +10,26 @@
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
-Version:	0.23
+Version:	0.29
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	ceea60ddf8170ce6142f9c232760789c
+# Source0-md5:	593b4533358a50aeef92e4325571e96c
 URL:		http://search.cpan.org/dist/Catalyst-Model-DBIC-Schema/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
+BuildRequires:	perl(CatalystX::Component::Traits) >= 0.10
+BuildRequires:	perl(DBIx::Class::Schema::Loader) >= 0.04005
+BuildRequires:	perl(Moose::Autobox)
 BuildRequires:	perl-Catalyst >= 5.70
 BuildRequires:	perl-Class-Accessor >= 0.22
 BuildRequires:	perl-Class-C3 >= 0.20
 BuildRequires:	perl-Class-C3-XS >= 0.08
+BuildRequires:	perl-DBIx-Class
+#BuildRequires:	perl-DBIx-Class-Cursor-Cached
 BuildRequires:	perl-MRO-Compat
 BuildRequires:	perl-UNIVERSAL-require >= 0.10
 %endif
@@ -70,4 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_vendorlib}/Catalyst/Model/DBIC/*.pm
 %{perl_vendorlib}/Catalyst/Helper/Model/DBIC/Schema.pm
+%{perl_vendorlib}/Catalyst/Model/DBIC/Schema/Types.pm
+%{perl_vendorlib}/Catalyst/TraitFor/Model/DBIC/Schema/*.pm
+
 %{_mandir}/man3/*
