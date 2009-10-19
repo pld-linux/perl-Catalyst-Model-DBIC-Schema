@@ -29,7 +29,7 @@ BuildRequires:	perl-Class-Accessor >= 0.22
 BuildRequires:	perl-Class-C3 >= 0.20
 BuildRequires:	perl-Class-C3-XS >= 0.08
 BuildRequires:	perl-DBIx-Class
-#BuildRequires:	perl-DBIx-Class-Cursor-Cached
+BuildRequires:	perl-DBIx-Class-Cursor-Cached
 BuildRequires:	perl-MRO-Compat
 BuildRequires:	perl-UNIVERSAL-require >= 0.10
 %endif
