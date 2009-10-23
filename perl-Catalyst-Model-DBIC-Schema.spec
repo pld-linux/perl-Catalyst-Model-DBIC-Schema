@@ -10,13 +10,13 @@
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
-Version:	0.29
+Version:	0.31
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	593b4533358a50aeef92e4325571e96c
+# Source0-md5:	6f8dad03a481927d763b6f9973505a83
 URL:		http://search.cpan.org/dist/Catalyst-Model-DBIC-Schema/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -73,9 +73,16 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
+%dir %{perl_vendorlib}/Catalyst/Model/DBIC
 %{perl_vendorlib}/Catalyst/Model/DBIC/*.pm
+%dir %{perl_vendorlib}/Catalyst/Helper/Model/DBIC
 %{perl_vendorlib}/Catalyst/Helper/Model/DBIC/Schema.pm
+%dir %{perl_vendorlib}/Catalyst/Model/DBIC
+%dir %{perl_vendorlib}/Catalyst/Model/DBIC/Schema
 %{perl_vendorlib}/Catalyst/Model/DBIC/Schema/Types.pm
+%dir %{perl_vendorlib}/Catalyst/TraitFor
+%dir %{perl_vendorlib}/Catalyst/TraitFor/Model
+%dir %{perl_vendorlib}/Catalyst/TraitFor/Model/DBIC
+%dir %{perl_vendorlib}/Catalyst/TraitFor/Model/DBIC/Schema
 %{perl_vendorlib}/Catalyst/TraitFor/Model/DBIC/Schema/*.pm
-
 %{_mandir}/man3/*
