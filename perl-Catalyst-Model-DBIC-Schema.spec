@@ -10,28 +10,38 @@
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
 Summary(pl.UTF-8):	Catalyst::Model::DBIC::Schema - klasa modelu DBIx::Class::Schema
 Name:		perl-Catalyst-Model-DBIC-Schema
-Version:	0.31
+Version:	0.59
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/Catalyst/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	6f8dad03a481927d763b6f9973505a83
+# Source0-md5:	ce1f34c55797d4f9525cca505e621fba
 URL:		http://search.cpan.org/dist/Catalyst-Model-DBIC-Schema/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
-BuildRequires:	perl(CatalystX::Component::Traits) >= 0.10
-BuildRequires:	perl(DBIx::Class::Schema::Loader) >= 0.04005
-BuildRequires:	perl(Moose::Autobox)
-BuildRequires:	perl-Catalyst >= 5.70
-BuildRequires:	perl-Class-Accessor >= 0.22
-BuildRequires:	perl-Class-C3 >= 0.20
-BuildRequires:	perl-Class-C3-XS >= 0.08
-BuildRequires:	perl-DBIx-Class
+BuildRequires:	perl(Catalyst::Devel) >= 1.0
+BuildRequires:	perl-Carp-Clan
+BuildRequires:	perl-Catalyst >= 5.80005
+BuildRequires:	perl-Catalyst-Component-InstancePerContext
+BuildRequires:	perl-CatalystX-Component-Traits >= 0.14
+BuildRequires:	perl-DBIx-Class >= 0.08114
 BuildRequires:	perl-DBIx-Class-Cursor-Cached
-BuildRequires:	perl-MRO-Compat
-BuildRequires:	perl-UNIVERSAL-require >= 0.10
+BuildRequires:	perl-DBIx-Class-Schema-Loader >= 0.04005
+BuildRequires:	perl-Hash-Merge
+BuildRequires:	perl-List-MoreUtils
+BuildRequires:	perl-Moose >= 1.12
+BuildRequires:	perl-MooseX-Traits-Pluggable
+BuildRequires:	perl-MooseX-Types
+#BuildRequires:	perl(MooseX::MarkAsMethods) >= 0.13
+#BuildRequires:	perl(MooseX::NonMoose) >= 0.16
+BuildRequires:	perl(Tie::IxHash)
+BuildRequires:	perl-namespace-autoclean >= 0.09
+BuildRequires:	perl-Try-Tiny
+BuildRequires:	perl(Test::Exception)
+BuildRequires:	perl(Test::Requires)
+BuildRequires:	perl-DBD-SQLite
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -56,6 +66,7 @@ wygeneruje także klasę schematu opartą o DBIx::Class::Schema::Loader.
 
 %build
 %{__perl} Makefile.PL \
+	--skipdeps \
 	INSTALLDIRS=vendor
 %{__make}
 
