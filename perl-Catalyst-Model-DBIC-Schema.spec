@@ -4,7 +4,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define	pdir	Catalyst
 %define	pnam	Model-DBIC-Schema
 Summary:	Catalyst::Model::DBIC::Schema - DBIx::Class::Schema Model Class
